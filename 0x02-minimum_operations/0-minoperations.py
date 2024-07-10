@@ -1,14 +1,29 @@
+#!/usr/bin/python3
+"""
+Script that computes the minimum operations
+needed in a Copy All - Paste task
+"""
+
 def minOperations(n):
-    if n <= 1:
+    """
+    Method for computing the minimum number
+    of operations for task Copy All and Paste
+    Args:
+        n: input value
+    Return: the sum of the operations
+    """
+    if n < 2:
         return 0
-    
-    operations = 0
-    factor = 2
-    
+    factor_sum = 0
+    i = 2  # Start with the first prime number
     while n > 1:
-        while n % factor == 0:
-            operations += factor
-            n //= factor
-        factor += 1
-    
-    return operations
+        while n % i == 0:
+            factor_sum += i
+            n //= i  # Use integer division
+        i += 1
+    return factor_sum
+
+# Example usage
+if __name__ == "__main__":
+    result = minOperations(12)
+    print("Minimum operations:", result)
