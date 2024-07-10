@@ -26,4 +26,4 @@ def minOperations(n):
 # Example usage
 if __name__ == "__main__":
     result = minOperations(12)
-    print("Minimum operations:", result)
+    print("Min operations:", result)
